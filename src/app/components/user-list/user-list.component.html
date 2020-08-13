@@ -1,0 +1,33 @@
+<section>
+
+  <div class="container">
+    <div class="col-md-12">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search" aria-label="Search">
+        <button class="btn  my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="row">
+      <div class="users col-12">
+        <div *ngFor="let element of this.item | filter:searchText |  slice: (page-1) * pageSize : (page-1) * pageSize + pageSize" class="col-md-3">
+          <div class="user">
+            <img src="{{element.avatar_url}}" alt="{{element.login}}">
+            <span class="user-name">{{element.login}}</span>
+            <a   [routerLink]="['/users', element.id]" >more Details</a>
+          </div>
+
+        </div>
+        <ngb-pagination [(page)]="page"
+                        [pageSize]="pageSize"
+                        [collectionSize]="this.item.length" class="pagination-component">
+
+        </ngb-pagination>
+
+      </div>
+
+
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,60 @@
+/*global variables*/
+
+$themeColor: #35c38f;
+$fontColor: #7d7d7d;
+$fontColorLight: #ffffff;
+
+
+body {
+  height: 100vh;
+
+  &.darkMode {
+    background-color: #000000;
+    color: $fontColorLight;
+
+    form {
+      input.form-control,
+      input.form-control:focus {
+        background-color: #000000;
+        color: $fontColorLight ;
+      }
+    }
+
+    .page-link,
+    .page-link:hover ,
+    .page-item.disabled .page-link {
+      background: #000000;
+    }
+
+    .users {
+      span.user-name {
+        color: $fontColorLight !important;
+      }
+    }
+    .btn {
+      &:hover, &:focus, &:visited {
+        color: $fontColorLight;
+      }
+    }
+    .change-theme  {
+      .btn {
+        background-color: #000000;
+
+      }
+
+    }
+  }
+
+  .change-theme {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    .btn {
+      -webkit-box-shadow: 2px 2px 12px 0px rgba(125, 125, 125);
+      -moz-box-shadow: 2px 2px 12px 0px rgba(125, 125, 125);
+      box-shadow: 2px 2px 12px 0px rgba(125, 125, 125);
+      background-color: #ffffff;
+    }
+  }
+
+}
